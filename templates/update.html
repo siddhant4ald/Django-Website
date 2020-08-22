@@ -1,0 +1,33 @@
+{% extends 'usrmaster.html' %}
+
+{% block content %}
+{%if user.is_authenticated%}
+
+{% if records %}
+<body style="background-color:lightgrey;">
+<br>
+<h4>Update Records</h4><br>
+<table class="table table-bordred">
+    <tr class="bg-primary">
+        <td>ID</td><td>Name</td><td>Age</td><td>Email</td><td>Address</td><td>Actions</td>
+    </tr>
+
+{% for r in records%}
+    <tr>
+        <td>{{r.sid}}</td>
+        <td>{{r.sname}}</td>
+        <td>{{r.sage}}</td>
+        <td>{{r.semail}}</td>
+        <td>{{r.scity}}</td>
+        <td>
+            <a href="../edit/?sid={{r.sid}}" ><i class="fa fa-pencil-square-o"></i></a> <a href="../updel/?sid={{r.sid}}" ><i class="fa fa-trash"></i></a></td>
+    </tr>
+
+{% endfor %}
+</table>
+{% else %}
+No Record Found
+{% endif %}
+{%endif%}
+</body>
+{% endblock %}

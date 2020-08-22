@@ -1,0 +1,21 @@
+{% extends 'usrmaster.html' %}
+
+{%block content%}
+<style>
+body{
+		background-color: ;
+
+	}
+</style>
+
+<p>Are you sure you want to delete "{{item}}"?</p>
+
+<a href="{% url 'index1' %}">Cancel</a>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<input type="submit" name="Confirm">
+</form>
+
+
+{%endblock%}

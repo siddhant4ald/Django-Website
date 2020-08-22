@@ -1,0 +1,32 @@
+{% extends 'usrmaster.html' %}
+
+{%block content%}
+
+{%if user.is_authenticated%}
+<body style="background-color:lightgrey;">
+<br><h3></h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form method ="POST" action="../delete/">
+        	{%csrf_token%}
+    	    <div class="form-group">
+
+		        <input type="text" name="t1" class="form-control" placeholder="Enter Id to delete">
+	        </div>
+
+            	<input type="submit" name="b1" value="Delete " class="btn btn-warning">
+	            <br>
+
+	        {%if info%}
+	        <h5 style="color:red">{{info}}</h5>
+        	{%endif%}
+</form>
+
+        </div>
+    </div>
+</div>
+</body>
+
+{%endif%}
+{%endblock%}

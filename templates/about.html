@@ -1,0 +1,36 @@
+{% extends 'usrmaster.html' %}
+{%load static%}
+{%block content%}
+{%if user.is_authenticated%}
+<html>
+	<head><link rel="stylesheet" href="{%static 'css/abt.css'%}"></head>
+	<style>
+
+	</style>
+	<body>
+
+		
+			<div class="circle circle1">
+				<div class="content">
+					<h2>Django Training</h2><br>
+					<p>The website has been made as a project work at UGI The project has been made under the guidance of Mr. Dhananjay Sharma</p>
+				</div>
+			</div>
+			<div class="circle circle2">
+				<div class="content">
+					<h2>Languages Used</h2><br>
+					<p>The languages used in the project are Python, HTML, JAVA-Script , CSS</p>
+				</div>
+			</div>
+			<div class="circle circle3">
+				<div class="content">
+					<h2>The Team</h2><br>
+					<p>The project has been made by  Shantanu Tripathi , Grace Thomas , Shaleen Rastogi and Siddhant Pandey</p>
+				</div>
+			</div>
+		
+    
+    </body>
+</html>
+{%endif%}
+{%endblock%}

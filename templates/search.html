@@ -1,0 +1,75 @@
+{% extends 'usrmaster.html' %}
+
+{%block content%}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body style="background-color:;">
+<div class="container"><br>
+<h1 style="margin-left:13px">Search</h1><br>
+<form method="post" action="../search/">
+	{%csrf_token%}
+	<div class="form-group">
+		<div class="col-md-5">
+			<input type="text" name="srh" class="form-control" placeholder="Enter  ID or Name to search" >
+		</div>
+		<br>
+		<label class="col-lg-2">
+			<button type="submit" class="btn btn-success">Search </button>
+		</label>
+	</div>
+</form><br><br>
+<div>
+	{%if messages%}
+			<ul class="messages">
+				{% for k in messages %}
+				<li style="color: red">{{k}}</li>
+				{% endfor%}
+			</ul>
+
+	{%endif%}
+</div><br>
+<div style="color: blue">
+	{%if sr%}
+		{%for k in sr %}
+		<table border="0px" width="300px" class="table">
+			<tr>
+				<td>ID:</td>
+				<td>{{k.sid}}</td>
+			</tr>
+			<tr>
+				<td>Name:</td>
+				<td>{{k.sname}}</td>
+			</tr>
+			<tr>
+				<td>Email Id:</td>
+				<td>{{k.semail}}</td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td>{{k.sage}}</td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td>{{k.scity}}</td>
+			</tr>
+
+		</table>
+		<hr>
+		{%endfor%}
+	{%endif%}
+</div>
+</div>
+</body>
+</html>
+
+{%endblock%}
+
+
+
+

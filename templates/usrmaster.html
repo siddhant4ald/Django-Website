@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% include "bootstrap.html" %}
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+
+		<div class="col-md-12">
+			{%if user.is_authenticated%}
+			{% include "menu.html"%}
+
+			{%else%}
+            <p>You are not logged in, Please <a href="/login"> Login Here</a> to continue</p>
+
+			<p>If not Registered <a href="/register" >Register Here</a></p>
+			{%endif%}
+			
+		</div>
+		<div class="col-md-12">
+
+				{% block content %}
+				{% endblock %}
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

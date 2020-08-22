@@ -1,0 +1,65 @@
+{% extends 'usrmaster.html' %}
+
+{% block content %}
+
+{% if records %}
+<body style="background-color:lightgrey;">
+<br><h3>Students Record</h3><br>
+<table class="table table-bordred">
+    <tr class="bg-primary">
+        <td>ID</td><td>Name</td><td>Age</td><td>Email</td><td>Address</td>
+    </tr>
+
+{% for r in records%}
+    <tr>
+        <td>{{r.sid}}</td>
+        <td>{{r.sname}}</td>
+        <td>{{r.sage}}</td>
+        <td>{{r.semail}}</td>
+        <td>{{r.scity}}</td>
+    </tr>
+
+{% endfor %}
+</table>
+{% else %}
+No Record Found
+{% endif %}
+</body>
+
+{% endblock %}
+
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title>show</title>
+
+</head>
+<body>
+<h1> Students Record</h1> <br><hr><br>
+{% if records %}
+	{%for r in records%}
+		<table border="0px" width="300px">
+			<tr>
+				<td>Name:</td>
+				<td>{{r.sname}}</td>
+			</tr>
+
+			<tr>
+				<td>Email Id:</td>
+				<td>{{r.semail}}</td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td>{{r.scity}}</td>
+			</tr>
+
+		</table>
+		<br><hr>
+	{%endfor%}
+{%else%}
+	no record found
+{%endif%}
+</body>
+</html> -->

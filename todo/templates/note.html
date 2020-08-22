@@ -1,0 +1,26 @@
+<!--{% extends 'usrmaster.html' %}
+
+{%block content%}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="../add/" method="POST">
+		{%csrf_token%}
+		<input type="text" placeholder="Enter a Todo" name="todo">
+		<input type="submit" name="" value="Add">
+	</form>
+{%for items in data%}
+<form action="../deleteItem/{{items.id}}/" method="post">
+	{%csrf_token%}
+	<h2>{{items.content}}</h2>
+	<input type="submit" name="" value="Delete">
+</form>
+{%endfor%}
+</body>
+</html>
+
+{%endblock%}-->

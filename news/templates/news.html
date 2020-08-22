@@ -1,0 +1,33 @@
+{% extends 'usrmaster.html' %}
+
+{%block content%}
+{%if user.is_authenticated%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body style="background-color: lightgrey;">
+
+<div class="jumbotron" style="color:black">
+	<h1 style="color: black; text-align:center; font-style: italic; font-size:60px; " >News Headlines</h1>
+</div>
+
+<div class="container">
+	{% for new, des, i in mylist%}
+
+	<img src="{{i}}" alt="">
+	<h3>News:</h3>{{new}}
+	{{value| linebreaks}}
+
+	<h4>Description :</h4> {{des}}
+	{{value | linebreaks}}
+
+
+	{%endfor%}
+</div>
+</body>
+</html>
+{%endif%}
+{%endblock%}
